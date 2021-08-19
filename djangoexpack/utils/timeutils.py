@@ -1,6 +1,5 @@
 import datetime
 import dateutil.parser
-import pytz
 import re
 from django.utils import timezone
 
@@ -23,7 +22,7 @@ def zstrftime(value):
 def datetime_fromtimestamp(timestamp):
     """ timestamp を UTC の tzaware な datetime に変換する。
     """
-    return datetime.datetime.fromtimestamp(timestamp, tz=pytz.utc)
+    return datetime.datetime.fromtimestamp(timestamp, tz=timezone.utc)
 
 
 TZINFOS = {
